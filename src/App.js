@@ -1,6 +1,7 @@
 
 import './App.css';
-
+import User from './components/User';
+import Navbar from './components/Navbar';
 
 function App()
 {
@@ -9,8 +10,13 @@ function App()
   return (
     <div className="App">
 
+
+
       <h1> merhaba dünya</h1>
-      <p className="sabit"> deneme yazdım oldu mu?</p>
+      <br></br>
+      <p> deneme yazdım oldu mu?</p>
+
+      <hr></hr>
       <label htmlFor="name"> </label>
 
       {1 + 1}
@@ -19,6 +25,13 @@ function App()
 
       <br></br>
       {deneme - 2}
+
+      <User />
+
+
+
+
+
 
 
       <div>
@@ -29,7 +42,7 @@ function App()
         }
 
       </div>
-
+      <Navbar/>
     </div>
   );
 }
