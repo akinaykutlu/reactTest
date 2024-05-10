@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
+
+function App()
+{
+  const deneme = 34 + 25;
+  const isAuth = true;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <h1> merhaba dünya</h1>
+      <p className="sabit"> deneme yazdım oldu mu?</p>
+      <label htmlFor="name"> </label>
+
+      {1 + 1}
+      <br></br>
+      {"Akın".toUpperCase()}
+
+      <br></br>
+      {deneme - 2}
+
+
+      <div>
+
+        {
+          isAuth ? <p> Kullanıcı değeri true</p>
+            : null
+        }
+
+      </div>
+
     </div>
   );
 }
