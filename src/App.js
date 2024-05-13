@@ -1,50 +1,45 @@
+import React, { useState } from 'react';
+import './login.css'; // CSS dosyasını ekleyin
 
-import './App.css';
-import User from './components/User';
-import Navbar from './components/Navbar';
+function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-function App()
-{
-  const deneme = 34 + 25;
-  const isAuth = true;
+  const handleLogin = () => {
+    // Kullanıcı girişi işlemleri burada gerçekleştirilecek
+    if (email === 'example@example.com' && password === '123456') {
+      // Başarılı giriş durumunda yapılacak işlemler
+      console.log('Giriş başarılı');
+    } else {
+      // Hatalı giriş durumunda yapılacak işlemler
+      setErrorMessage('Geçersiz e-posta veya şifre');
+    }
+  };
+
   return (
-    <div className="App">
-
-
-
-      <h1> merhaba dünya</h1>
-      <br></br>
-      <p> deneme yazdım oldu mu?</p>
-
-      <hr></hr>
-      <label htmlFor="name"> </label>
-
-      {1 + 1}
-      <br></br>
-      {"Akın".toUpperCase()}
-
-      <br></br>
-      {deneme - 2}
-
-      <User />
-
-
-
-
-
-
-
+    <div className="container"> {/* CSS sınıfını ekleyin */}
+      <h2>Kullanıcı Girişi</h2>
       <div>
-
-        {
-          isAuth ? <p> Kullanıcı değeri true</p>
-            : null
-        }
-
+        <label>E-posta:</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </div>
-      <Navbar/>
+      <div>
+        <label>Şifre:</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+      <button onClick={handleLogin}>Giriş Yap</button>
+      {errorMessage && <div className="error-message">{errorMessage}</div>} {/* CSS sınıfını ekleyin */}
     </div>
   );
 }
 
-export default App;
+export default Login;
